@@ -1,0 +1,35 @@
+<h1>User</h1>
+
+<p>
+  <b>First name</b><br>
+  {{user.first_name}}
+</p>
+
+<p>
+  <b>Last name</b><br>
+  {{user.last_name}}
+</p>
+
+<p>
+  <b>Email</b><br>
+  {{user.email}}
+</p>
+
+<p>
+  <b>Age</b><br>
+  {{user.age}}
+</p>
+
+<div class="form-actions">
+  <a href="/users/{{user.id}}/edit"
+    class="btn btn-primary"><i class="icon-edit"></i>
+    Edit User
+  </a>
+  <button ng-click="destroy()" class="btn btn-danger">
+    <i class="icon-trash"></i> Delete
+  </button>
+  <a href="/users" class="btn">
+    Back to users
+  </a>
+</div>
+

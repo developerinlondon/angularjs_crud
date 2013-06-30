@@ -1,0 +1,29 @@
+h1 Listing users
+table#users-table.table.table-striped.table-bordered.table-hover.table-condensed
+  thead
+    tr
+      th First Name
+      th Last Name
+      th Age
+      th Email
+      th Action
+  tbody
+    tr ng-repeat="user in users"
+      td
+        a href="/users/{{user.id}}" {{user.first_name}}
+      td
+        a href="/users/{{user.id}}" {{user.last_name}}
+      td
+        a href="/users/{{user.id}}" {{user.email}}
+      td
+        a href="/users/{{user.id}}" {{user.age}}
+      td
+        a.btn.btn-primary.btn-small href="/users/{{user.id}}/edit" 
+          i.icon-edit Edit
+
+        button.btn.btn-small.btn-danger ng-click="destroy()"
+          i.icon-trash  Delete
+
+p
+  a.btn.btn-primary href="/users/new" 
+    i.icon-plus  New
