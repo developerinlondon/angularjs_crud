@@ -1,9 +1,14 @@
 
 root = global ? window
 
+store = {}
+
 UsersIndexCtrl = ($scope, User) ->
-  unless $scope.users
+  if store.users
+    $scope.users = store.users
+  else
     $scope.users = User.query()
+    store.users = $scope.users
 
   $scope.destroy = ->
     if confirm("Are you sure?")
